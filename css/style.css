@@ -1,0 +1,910 @@
+@charset "utf-8";
+/*common CSS*/
+.clearfix::after, .clearfix::before {
+	content: "";
+	display: block;
+}
+.clearfix::after {
+	clear: both;
+}
+body.static {
+	position: static; left:0; right: 0; top: 0; bottom: 0;
+	overflow: hidden;
+}
+.main_title {
+	font-weight: 700;
+	font-size: 6.875em;
+	color: #eee;
+	text-align: center;
+}
+/* style CSS */
+#home {
+	max-width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+/* PC gnb */
+#gnb {
+	position: absolute; right: 0; top: 0;
+	z-index: 9999;
+	height: 70px;
+}
+#gnb li {
+	display: inline-block;
+}
+#gnb .gnb_inner li a {
+	display: block;
+	padding: 25px;
+	font-weight: 700;
+	transition: color 0.3s;
+}
+#gnb .gnb_inner li a:hover {
+	text-decoration: underline;
+}
+/* gnb_fixed */
+#gnb_fixed {
+	position: fixed; right: -200px; bottom: 100px;
+	z-index: 9999;
+	transition: right 0.8s;
+	overflow: hidden;
+	transition: padding-left 0.3s;
+}
+#gnb_fixed.active {
+	right: 30px;
+}
+#gnb_fixed:hover {
+	padding-left: 105px;
+}
+#gnb_fixed .gnb_inner li a {
+	position: relative;
+	display: block;
+	width: 26px;
+	height: 26px;
+	margin-bottom: 20px;
+	border: 1.5px solid #9C4235;
+	border-radius: 13px;
+	background-color: #fff;
+}
+#gnb_fixed .gnb_inner li:last-child a {
+	margin-bottom: 0;
+}
+#gnb_fixed .gnb_inner li a:hover {
+	background-color: #e0d17c;
+}
+#gnb_fixed .gnb_inner li.active a {
+	background-color: #9C4235;
+}
+#gnb_fixed .gnb_inner li a span {
+	position: absolute; right: 26px; top: -4px;
+	display: block;
+	padding: 7px;
+	margin-right: 5px;
+	font-size: 0.875em;
+	font-weight: 600;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.8);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+#gnb_fixed:hover .gnb_inner ul li a span {
+	opacity: 1;
+}
+#gnb_fixed .gnb_inner ul li a:hover span {
+	color: #e0d17c;
+}
+#gnb_fixed .gnb_inner ul li.active a span {
+	color: #9C4235;
+}
+/* gnb_mobile */
+#gnb_mobile {
+	display: none;
+	position: fixed; left: 0; right: 0; top: 150px;
+	width: 70%;
+	height: 420px;
+	margin: 0 auto;
+	z-index: 9999;
+}
+#gnb_mobile .gnb_inner li a {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	padding: 30px 0 10px 0;
+	text-align: center;
+	font-weight: 600;
+	font-size: 2em;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+#gnb_mobile .gnb_inner li.active a {
+	color: #e0d17c;
+}
+#home .bg {
+	display: none;
+	position: fixed; left: 0; top: 0;
+	width: 100%;
+	height: 64px;
+	z-index: 99;
+	background-color: rgba(0,0,0,0.2);
+}
+#home .tab {
+	display: none;
+	position: fixed; right: 20px; top: 20px;
+	z-index: 9999;
+}
+#home .tab a {
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/tab.png) no-repeat left center;
+}
+#home .tab.active a {
+	background: url(../images/tab.png) no-repeat right center;
+}
+#home .tab span {
+	display: block;
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+@media only screen and (max-width: 850px){
+	.main_title {
+		font-size: 5em;
+	}
+}
+@media only screen and (max-width: 720px){
+	.main_title {
+		font-size: 3em;
+	}
+	#gnb {
+		display: none;
+	}
+	#home .tab {
+		display: block;
+	}
+	#home .bg {
+		display: block;
+	}
+}
+@media only screen and (max-width: 460px){
+}
+/* 1장 home */
+#home .keyvisual {
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+#home .keyvisual .img {
+	position: absolute; left: 0; bottom: 0;
+	opacity: 0.4;
+}
+#home .keyvisual img {
+	height: 85vh;
+	vertical-align: bottom;
+}
+#home .keyvisual .keytext {
+	position: absolute; right: 20px; bottom: 300px;
+	font-size: 1.5em;
+	text-align: center;
+}
+#home .keyvisual .keytext h2 {
+	font-size: 4em;
+	font-family: 'Liu Jian Mao Cao', cursive;
+}
+@media only screen and (max-width: 1080px){
+	#home .keyvisual .img {
+		left: -150px;
+	}
+}
+@media only screen and (max-width: 850px){}
+@media only screen and (max-width: 720px){
+	#home .keyvisual .img {
+		left: -50px;
+	}
+	#home .keyvisual .keytext {
+		right: auto; top: auto; bottom: 100px;
+		width: 100%;
+		font-size: 0.875em;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 460px){}
+
+/* 2장 프로필 */
+#profile .profile1 {
+	border-top: 1px solid #ccc;
+}
+#profile .profile1 .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+	padding-top: 50px;
+	border-bottom: 1px dashed #ccc;
+	overflow: hidden;
+}
+#profile .profile1 .content .intro span,
+#profile .profile1 .content .body span {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+#profile .profile1 .content .intro {
+	float: left;
+	width: 48%;
+	height: 500px;
+	padding: 40px 60px;
+	line-height: 30px;
+	background-color: #eee;
+	transform: translateX(-500px);
+	opacity: 0;
+	transition: transform 0.8s, opacity 0.8s;
+	transition-delay: 0.5s;
+}
+#profile .profile1 .content .body {
+	float: right;
+	width: 48%;
+	height: 500px;
+	padding: 34px 60px;
+	line-height: 30px;
+	border: 3px solid #eee;
+	transform: translateX(500px);
+	opacity: 0;
+	transition: transform 0.8s, opacity 0.8s;
+	transition-delay: 0.5s;
+}
+#profile .profile1.show .content .intro,
+#profile .profile1.show .content .body {
+	transform: translateX(0);
+	opacity: 1;
+}
+#profile .profile1 .content .body li {
+	line-height: 40px;
+}
+@media only screen and (max-width: 1080px){
+	br.big{
+		display: none;
+	}
+	#profile .profile1 .content .intro {
+		padding: 40px 40px;
+	}
+	#profile .profile1 .content .body {
+		padding: 34px 40px;
+	}
+}
+@media only screen and (max-width: 850px){
+	#profile .profile1 .content .intro {
+		float: none;
+		width: calc(100% - 20px);
+		height: auto;
+		padding: 40px 60px;
+		margin: 10px;
+	}
+	#profile .profile1 .content .body {
+		float: none;
+		width: calc(100% - 20px);
+		height: auto;
+		padding: 34px 60px;
+		margin: 10px;
+	}
+}
+@media only screen and (max-width: 720px){
+	#profile .profile1 .content {
+		font-size: 0.875em;
+	}
+}
+@media only screen and (max-width: 460px){
+	#profile .profile1 .content .intro {
+		padding: 40px;
+	}
+#profile .profile1 .content .body {
+    padding: 34px 40px;
+	}
+}
+
+/* 3장 프로필 */
+#profile .profile2 .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+	overflow: hidden;
+}
+#profile .profile2 .content .photo {
+	float: left;
+	margin-left: 100px;
+	transform: translateX(-500px);
+	opacity: 0;
+	transition: transform 0.8s, opacity 0.8s;
+	transition-delay: 0.5s;
+}
+#profile .profile2.show .content .photo {
+	transform: translateX(0);
+	opacity: 1;
+}
+#profile .profile2 .content .photo .ph_img {
+	width: 500px;
+	overflow: hidden;
+}
+#profile .profile2 .content .photo img {
+	width: 100%;
+}
+#profile .profile2 .content .ph_text {
+	padding-right: 10px;
+	text-align: right;
+}
+#profile .profile2 .content .text {
+	float: left;
+	padding-left: 80px;
+	transform: translateX(500px);
+	opacity: 0;
+	transition: transform 0.8s, opacity 0.8s;
+	transition-delay: 0.5s;
+}
+#profile .profile2.show .content .text {
+	transform: translateX(0);
+	opacity: 1;
+}
+#profile .profile2 .content .text li {
+	margin-top: 40px;
+}
+#profile .profile2 .content .text li:first-child {
+	margin-top: -7px;
+}
+#profile .profile2 .content .text .sub_title {
+	font-size: 1.2em;
+	font-weight: 600;
+	padding-bottom: 10px;
+}
+#profile .profile2 .content .text p {
+	line-height: 30px;
+}
+#profile .profile2 .content .text span {
+	padding-right: 20px;
+	color: #b6b6b6;
+}
+@media only screen and (max-width: 1080px){
+	#profile .profile2 .content .photo {
+		margin-left: 50px;
+	}
+	#profile .profile2 .content .photo .ph_img {
+		width: 450px;
+	}
+	#profile .profile2 .content .text {
+		padding-left: 40px;
+	}
+	#profile .profile2 .content .text li {
+		margin-top: 30px;
+	}
+	#profile .profile2 .content .text li:first-child {
+		margin-top: -5px;
+	}
+	#profile .profile2 .content .text .sub_title {
+		padding-bottom: 3px;
+	}
+	#profile .profile2 .content .text p {
+		line-height: 30px;
+	}
+	#profile .profile2 .content .text span {
+		padding-right: 20px;
+		color: #b6b6b6;
+	}
+}
+@media only screen and (max-width: 850px){
+	#profile .profile2 .content .photo {
+		float: none;
+		width: 440px;
+		margin: 0 auto;
+	}
+	#profile .profile2 .content .photo .ph_img {
+		width: 100%;
+	}
+	#profile .profile2 .content .text {
+		float: none;
+		width: 440px;
+		margin: 0 auto;
+		margin-top: 50px;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 720px){}
+@media only screen and (max-width: 460px){
+	#profile .profile2 .content .photo {
+		width: calc(100% - 20px);
+		margin: 0 10px;
+	}
+	#profile .profile2 .content .text {
+		width: 100%;
+		padding-left: 0;
+	}
+}
+
+/* 포트폴리오 */
+div[class^=portfolio] .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+	border-bottom: 1px dashed #ccc;
+	overflow: hidden;
+}
+div[class^=portfolio] .content .text {
+	float: left;
+	width: 460px;
+	margin-left: 50px;
+	padding-top: 10px;
+	opacity: 0;
+	transition: opacity 0.8s;
+}
+#portfolio.show div[class^=portfolio] .content .text {
+	opacity: 1;
+}
+div[class^=portfolio] .content .text .title {
+	font-size: 2em;
+	font-weight: 600;
+	color: #000;
+}
+div[class^=portfolio] .content .text .sub {
+	padding: 15px 0;
+}
+div[class^=portfolio] .content .text .sub span {
+	padding-right: 10px;
+	color: #b6b6b6;
+}
+div[class^=portfolio] .content .text .body {
+	line-height: 30px;
+}
+div[class^=portfolio] .content .text a {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	margin-top: 20px;
+	margin-right: 10px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 0.875em;
+	color: #fff;
+	border: 1px solid #9C4235;
+	background-color: #9C4235;
+	transition: all 0.3s;
+}
+div[class^=portfolio] .content .text a:hover {
+	border: 1px solid #9C4235;
+	background-color: #000;
+}
+/* active focus 줘서 원래 색상 주기 */
+div[class^=portfolio] .content .text a.port_tab {
+	color: #9C4235;
+	border: 1px solid #9C4235;
+	background-color: #fff;
+	transition: all 0.3s;
+}
+div[class^=portfolio] .content .text a.port_tab:hover {
+	color: #fff;
+	background-color: #9C4235;
+}
+div[class^=portfolio] .content .img {
+	float: right;
+	margin-right: 50px;
+	width: 460px;
+	opacity: 0;
+	transition: opacity 0.8s;
+}
+#portfolio.show div[class^=portfolio] .content .img {
+	opacity: 1;
+}
+div[class^=portfolio] .content img {
+	width: 100%;
+}
+div[class^=portfolio] .inner {
+	background-color: #eee;
+	display: none;
+}
+div[class^=portfolio] .inner .video {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 50px;
+}
+div[class^=portfolio] .inner .video video {
+	width: 100%;
+}
+div[class^=portfolio] .inner .text {
+	background-color: #fff;
+	padding: 50px 0;
+	text-align: center;
+}
+div[class^=portfolio] .inner .text .text1 {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+div[class^=portfolio] .inner .text .text1 span {
+	display: inline-block;
+	width: 120px;
+	color: #b6b6b6;
+}
+div[class^=portfolio] .inner .text .text2 {
+	padding-left: 50px;
+	margin-left: 50px;
+	border-left: 1px solid #eee;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+div[class^=portfolio] .inner .img {
+	width: 500px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+div[class^=portfolio] .inner .img img {
+	width: 100%;
+}
+div[class^=portfolio] .inner .guide {
+	padding: 50px 0;
+	background-color: #fff;
+	text-align: center;
+}
+div[class^=portfolio] .inner .guide .color {
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 50px;
+	margin-right: 50px;
+	border-right: 1px solid #eee;
+}
+div[class^=portfolio] .inner .guide .color .color1 {
+	margin-bottom: 30px;
+}
+div[class^=portfolio] .inner .guide .color li {
+	display: inline-block;
+	margin-left: 20px;
+	font-size: 0.875em;
+	text-align: center;
+}
+div[class^=portfolio] .inner .guide .color li:first-child {
+	/* margin-left: 0; */
+}
+div[class^=portfolio] .inner .guide .color .color_inner {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	margin: 0 auto;
+}
+div[class^=portfolio] .inner .guide .font {
+	display: inline-block;
+	vertical-align: middle;
+}
+div[class^=portfolio] .inner .inner_tab a {
+	display: block;
+	width: 100%;
+	height: 50px;
+	background: url(../images/arrow.png) no-repeat center center;
+	transition: background-color 0.3s;
+}
+div[class^=portfolio] .inner .inner_tab a:hover,
+div[class^=portfolio] .inner .inner_tab a:focus {
+	background-color: ;
+	background: #9C4235 url(../images/arrow2.png) no-repeat center center;
+}
+/* 포트폴리오1 */
+#portfolio .portfolio1{
+	border-top: 1px solid #ccc;
+}
+#portfolio .portfolio1 .content {
+	padding-top: 50px;
+}
+#portfolio .portfolio1 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #c9bf19;
+}
+#portfolio .portfolio1 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #9db615;
+}
+#portfolio .portfolio1 .inner .color .color1 li:nth-child(3) .color_inner {
+	background-color: #74a727;
+}
+#portfolio .portfolio1 .inner .color .color1 li:nth-child(4) .color_inner {
+	background-color: #fc7941;
+}
+#portfolio .portfolio1 .inner .color .color1 li:nth-child(5) .color_inner {
+	background-color: #234c8f;
+}
+#portfolio .portfolio1 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio .portfolio1 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #828783;
+}
+#portfolio .portfolio1 .inner .color .color2 li:nth-child(3) .color_inner {
+	background-color: #f5f4f0;
+}
+#portfolio .portfolio1 .inner .color .color2 li:nth-child(4) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio .portfolio1 .inner .font .font_1 {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+#portfolio .portfolio1 .inner .font .font_2 {
+	font-size: 0.875em;
+}
+#portfolio .portfolio1 .inner .font .font_3 {
+	font-size: 0.8em;
+}
+#portfolio .portfolio1 .inner .font .font_4 {
+	font-size: 0.75em;
+}
+/* 포트폴리오2 */
+#portfolio .portfolio2 .content .text {
+	float: right;
+	margin-left: 0;
+   margin-right: 50px;
+}
+#portfolio .portfolio2 .content .img {
+	float: left;
+ 	margin-left: 50px;
+	margin-right: 0;
+}
+#portfolio .portfolio2 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #22cace;
+}
+#portfolio .portfolio2 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #fed136;
+}
+#portfolio .portfolio2 .inner .color .color1 li:nth-child(3) .color_inner {
+	background-color: #74a727;
+}
+#portfolio .portfolio2 .inner .color .color1 li:nth-child(4) .color_inner {
+	background-color: #fc7941;
+}
+#portfolio .portfolio2 .inner .color .color1 li:nth-child(5) .color_inner {
+	background-color: #234c8f;
+}
+#portfolio .portfolio2 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio .portfolio2 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #353336;
+}
+#portfolio .portfolio2 .inner .color .color2 li:nth-child(3) .color_inner {
+	background-color: #f9f9f9;
+}
+#portfolio .portfolio2 .inner .color .color2 li:nth-child(4) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio .portfolio2 .inner .font .font_1 {
+	font-size: 1.875em;
+	font-weight: 600;
+}
+#portfolio .portfolio2 .inner .font .font_2 {
+	font-size: 1em;
+}
+#portfolio .portfolio2 .inner .font .font_3 {
+	font-size: 0.75em;
+}
+/* 포트폴리오3 */
+#portfolio .portfolio3 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio .portfolio3 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #b5252e;
+}
+#portfolio .portfolio3 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #444;
+}
+#portfolio .portfolio3 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #707475;
+}
+#portfolio .portfolio3 .inner .color .color2 li:nth-child(3) .color_inner {
+	background-color: #9f9f9d;
+}
+#portfolio .portfolio3 .inner .color .color2 li:nth-child(4) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio .portfolio3 .inner .font .font_1 {
+	font-size: 1.5em;
+	font-weight: 600;
+}
+#portfolio .portfolio3 .inner .font .font_2 {
+	font-size: 0.9em;
+}
+#portfolio .portfolio3 .inner .font .font_3 {
+	font-size: 0.8em;
+}
+/* 포트폴리오4 */
+#portfolio .portfolio4 {
+	border-bottom: 1px solid #ccc;
+}
+#portfolio .portfolio4 .content {
+	border-bottom: none;
+}
+#portfolio .portfolio4 .content .text {
+	float: right;
+	margin-left: 0;
+   margin-right: 50px;
+}
+#portfolio .portfolio4 .content .img {
+	float: left;
+ 	margin-left: 50px;
+	margin-right: 0;
+}
+#portfolio .portfolio4 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #e60013;
+}
+#portfolio .portfolio4 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #674a3e;
+}
+#portfolio .portfolio4 .inner .color .color1 li:nth-child(3) .color_inner {
+	background-color: #b89d83;
+}
+#portfolio .portfolio4 .inner .color .color1 li:nth-child(4) .color_inner {
+	background-color: #efebe1;
+}
+#portfolio .portfolio4 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio .portfolio4 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio .portfolio4 .inner .font .font_1 {
+	font-size: 1.875em;
+	font-weight: 600;
+}
+#portfolio .portfolio4 .inner .font .font_2 {
+	font-size: 1.5em;
+}
+#portfolio .portfolio4 .inner .font .font_3 {
+	font-size: 1em;
+}
+#portfolio .portfolio4 .inner .font .font_4 {
+	font-size: 0.875em;
+}
+@media only screen and (max-width: 1080px){
+	div[class^=portfolio] .content .text {
+		width: 48%;
+		margin-left: 10px;
+		padding-top: 30px;
+	}
+	div[class^=portfolio] .content .img {
+		margin-right: 10px;
+		width: 48%;
+	}
+	#portfolio .portfolio2 .content .text {
+		margin-right: 10px;
+	}
+	#portfolio .portfolio2 .content .img {
+		margin-left: 10px;
+	}
+	#portfolio .portfolio4 .content .text {
+		margin-right: 10px;
+	}
+	#portfolio .portfolio4 .content .img {
+		margin-left: 10px;
+	}
+}
+@media only screen and (max-width: 850px){
+	div[class^=portfolio] .content {
+		text-align: center;
+	}
+	div[class^=portfolio] .content .text {
+		float: none;
+		width: 100%;
+		margin: 0 auto;
+	}
+	div[class^=portfolio] .content .img {
+		float: none;
+		width: 450px;
+		margin: 0 auto;
+	}
+	#portfolio .portfolio2 .content .text {
+		float: none;
+		width: 100%;
+	}
+	#portfolio .portfolio2 .content .img {
+		float: none;
+		margin: 0 auto;
+	}
+	#portfolio .portfolio4 .content .text {
+		float: none;
+		width: 100%;
+	}
+	#portfolio .portfolio4 .content .img {
+		float: none;
+		margin: 0 auto;
+	}
+	div[class^=portfolio] .inner .video {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 720px){
+	div[class^=portfolio] .content {
+		font-size: 0.875em;
+	}
+	div[class^=portfolio] .content .img {
+		width: 100%;
+	}
+	#portfolio .portfolio2 .content .img {
+		width: 100%;
+	}
+	#portfolio .portfolio4 .content .img {
+		width: 100%;
+	}
+	div[class^=portfolio] .inner {
+		font-size: 0.875em;
+	}
+	div[class^=portfolio] .inner .text .text1 {
+		display: block;
+		width: 290px;
+		margin: 0 auto;
+		padding-bottom: 50px;
+	}
+	div[class^=portfolio] .inner .text .text2 {
+		display: block;
+		margin: 0 20px;
+		padding-left: 0;
+		padding-top: 50px;
+		border-top: 1px solid #eee;
+		text-align: center;
+		border-left: none;
+	}
+	div[class^=portfolio] .inner .video {
+		padding: 50px 0;
+	}
+	div[class^=portfolio] .inner .img {
+		width: 100%;
+		margin: 0;
+		padding: 50px 70px;
+	}
+	div[class^=portfolio] .inner .guide .color {
+		display: block;
+		margin: 0 20px;
+		padding-right: 0;
+		padding-bottom: 50px;
+		border-right: none;
+		border-bottom: 1px solid #eee;
+	}
+	div[class^=portfolio] .inner .guide .color li {
+		margin-left: 10px;
+	}
+	div[class^=portfolio] .inner .guide .font {
+		display: block;
+		padding-top: 50px;
+		border-right: none;
+	}
+}
+@media only screen and (max-width: 460px){
+	div[class^=portfolio] .inner .guide .color .color_inner {
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+	}
+}
+/* 푸터 */
+#footer {
+	padding: 10px 0;
+	/* background-color: #abd8e0; */
+	background-color: #444;
+	margin-top: 100px;
+}
+#footer .text {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	color: #fff;
+	font-size: 0.875em;
+}
+@media only screen and (max-width: 1080px){}
+@media only screen and (max-width: 850px){}
+@media only screen and (max-width: 720px){
+	#footer .text {
+		font-size: 0.7em;
+	}
+}
+@media only screen and (max-width: 460px){}
+
+.dim {
+	display: none;
+	position: fixed; right: 0; left: 0; top: 0; bottom: 0;
+	z-index: 999;
+	background-color: rgba(0,0,0,0.8);
+}
