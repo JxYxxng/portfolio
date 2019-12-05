@@ -46,14 +46,14 @@ body.static {
 	position: fixed; right: -200px; bottom: 100px;
 	z-index: 9999;
 	transition: right 0.8s;
-	overflow: hidden;
-	transition: padding-left 0.3s;
+	/* overflow: hidden; */
+	/* transition: padding-left 0.3s; */
 }
 #gnb_fixed.active {
 	right: 30px;
 }
 #gnb_fixed:hover {
-	padding-left: 105px;
+	/* padding-left: 105px; */
 }
 #gnb_fixed .gnb_inner li a {
 	position: relative;
@@ -64,30 +64,26 @@ body.static {
 	border: 1.5px solid #9C4235;
 	border-radius: 13px;
 	background-color: #fff;
+	transition: border 0.3s, background-color 0.3s;
 }
 #gnb_fixed .gnb_inner li:last-child a {
 	margin-bottom: 0;
 }
 #gnb_fixed .gnb_inner li a:hover {
+	border: 1.5px solid #e0d17c;
 	background-color: #e0d17c;
 }
 #gnb_fixed .gnb_inner li.active a {
+	border: 1.5px solid #9C4235;
 	background-color: #9C4235;
 }
 #gnb_fixed .gnb_inner li a span {
-	position: absolute; right: 26px; top: -4px;
-	display: block;
-	padding: 7px;
-	margin-right: 5px;
-	font-size: 0.875em;
+	display: none;
+	position: absolute; right: 25px; top: -8px;
+	padding: 7px 10px;
+	font-size: 1em;
 	font-weight: 600;
-	border-radius: 5px;
-	background-color: rgba(255,255,255,0.8);
-	opacity: 0;
-	transition: opacity 0.3s;
-}
-#gnb_fixed:hover .gnb_inner ul li a span {
-	opacity: 1;
+	text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
 #gnb_fixed .gnb_inner ul li a:hover span {
 	color: #e0d17c;

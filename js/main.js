@@ -149,6 +149,16 @@ $(function(){
 		$(".bg").fadeIn(300);
 	});
 
+	// gnb_fixed 탭
+	$("#gnb_fixed a").hover(
+		function(){
+		$("#gnb_fixed span").stop().fadeIn(300);
+		},
+		function(){
+		$("#gnb_fixed span").stop().fadeOut(300);
+		},
+	);
+
 
 	// *모바일 메뉴 탭
 	$(".tab, .dim").click(function(e){
