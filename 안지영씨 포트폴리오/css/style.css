@@ -1,0 +1,613 @@
+@charset "utf-8";
+/*common CSS*/
+.clearfix::after, .clearfix::before {
+	content: "";
+	display: block;
+}
+.clearfix::after {
+	clear: both;
+}
+body.static {
+	position: static; left:0; right: 0; top: 0; bottom: 0;
+	overflow: hidden;
+}
+.main_title {
+	font-weight: 700;
+	font-size: 6.875em;
+	color: #eee;
+	text-align: center;
+}
+/* style CSS */
+/* 메뉴 */
+#gnb li, #gnb_fixed li {
+	display: inline-block;
+}
+#gnb .gnb_inner li a, #gnb_fixed .gnb_inner li a {
+	display: block;
+	padding: 25px 5px;
+	font-weight: 700;
+	transition: color 0.3s;
+}
+#gnb .gnb_inner li a:hover, #gnb_fixed .gnb_inner li a:hover {
+	/* color: #e0d17c; */
+	text-decoration: underline;
+}
+/* gnb */
+#gnb {
+	position: absolute; right: 0; top: 0;
+	z-index: 9999;
+	height: 70px;
+}
+#gnb .gnb_inner{
+	margin-right: 50px;
+}
+/* gnb_fixed */
+#gnb_fixed {
+	display: none;
+	position: fixed; left: 0; right: 0; top: 0;
+	z-index: 9999;
+	height: 70px;
+	background-color: rgba(255,255,255,0.8);
+}
+#gnb_fixed .gnb_inner ul {
+	text-align: center;
+}
+#gnb_fixed .gnb_inner li a {
+	/* color: #abd8e0; */
+}
+#gnb_fixed .gnb_inner li.active a {
+	/* color: #398595; */
+	text-decoration: underline;
+}
+#home .bg {
+	display: none;
+	position: fixed; left: 0; top: 0;
+	width: 100%;
+	height: 64px;
+	z-index: 99;
+	background-color: rgba(0,0,0,0.2);
+}
+#home .tab {
+	display: none;
+	position: fixed; right: 20px; top: 20px;
+	z-index: 9999;
+}
+#home .tab a {
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/tab.png) no-repeat left center;
+}
+#home .tab.active a {
+	background: url(../images/tab.png) no-repeat right center;
+}
+#home .tab span {
+	display: block;
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+/* gnb_mobile */
+#gnb_mobile {
+	display: none;
+	position: fixed; left: 0; right: 0; top: 100px;
+	width: 70%;
+	height: 420px;
+	margin: 0 auto;
+	z-index: 9999;
+}
+#gnb_mobile .gnb_inner li a {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	padding: 30px 0 10px 0;
+	text-align: center;
+	font-weight: 600;
+	font-size: 2em;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+#gnb_mobile .gnb_inner li.active a {
+	color: #e0d17c;
+}
+@media only screen and (max-width: 1080px){}
+@media only screen and (max-width: 720px){
+	#gnb {
+		display: none;
+	}
+	#home .tab {
+		display: block;
+	}
+	#home .bg {
+		display: block;
+	}
+}
+@media only screen and (max-width: 460px){
+}
+/* 1장 home */
+#home .keyvisual {
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+#home .keyvisual .img {
+	position: absolute; left: 100px; bottom: 0;
+	width: 700px;
+}
+#home .keyvisual img {
+	width: 100%;
+	vertical-align: bottom;
+}
+#home .keyvisual .keytext {
+	position: absolute; right: 200px; bottom: 200px;
+	font-size: 1.5em;
+	text-align: center;
+}
+#home .keyvisual .keytext h2 {
+	font-size: 4em;
+	font-family: 'Liu Jian Mao Cao', cursive;
+}
+@media only screen and (max-width: 1080px){}
+@media only screen and (max-width: 720px){}
+@media only screen and (max-width: 460px){}
+
+/* 2장 프로필 프론트엔드 개발자 */
+#profile .profile1 {
+	border-top: 1px solid #ccc;
+}
+#profile .profile1 .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+	padding-top: 50px;
+	border-bottom: 1px dashed #ccc;
+	overflow: hidden;
+}
+#profile .profile1 .content .intro span,
+#profile .profile1 .content .body span {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+#profile .profile1 .content .intro {
+	float: left;
+	width: 48%;
+	height: 500px;
+	padding: 40px 60px;
+	line-height: 30px;
+	background-color: #eee;
+	transform: translateX(-500px);
+	opacity: 0;
+	transition: transform 0.8s, opacity 0.8s;
+	transition-delay: 0.5s;
+}
+#profile .profile1 .content .body {
+	float: right;
+	width: 48%;
+	height: 500px;
+	padding: 34px 60px;
+	line-height: 30px;
+	border: 3px solid #eee;
+	transform: translateX(500px);
+	opacity: 0;
+	transition: transform 0.8s, opacity 0.8s;
+	transition-delay: 0.5s;
+}
+#profile .profile1.show .content .intro,
+#profile .profile1.show .content .body {
+	transform: translateX(0);
+	opacity: 1;
+}
+#profile .profile1 .content .body li {
+	line-height: 40px;
+}
+@media only screen and (max-width: 1080px){}
+@media only screen and (max-width: 720px){}
+@media only screen and (max-width: 460px){}
+
+/* 3장 프로필 */
+#profile .profile2 .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+	overflow: hidden;
+}
+#profile .profile2 .content .photo {
+	float: left;
+	margin-left: 100px;
+}
+#profile .profile2 .content .photo .ph_img {
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+}
+#profile .profile2 .content .photo img {
+	width: 100%;
+}
+#profile .profile2 .content .ph_text {
+	padding-right: 10px;
+	text-align: right;
+}
+#profile .profile2 .content .text {
+	float: left;
+	padding-left: 80px;
+}
+#profile .profile2 .content .text li {
+	margin-top: 40px;
+}
+#profile .profile2 .content .text li:first-child {
+	margin-top: -7px;
+}
+#profile .profile2 .content .text .sub_title {
+	font-size: 1.2em;
+	font-weight: 600;
+	padding-bottom: 10px;
+}
+#profile .profile2 .content .text p {
+	line-height: 30px;
+}
+#profile .profile2 .content .text span {
+	padding-right: 20px;
+	color: #b6b6b6;
+}
+@media only screen and (max-width: 1080px){}
+@media only screen and (max-width: 720px){}
+@media only screen and (max-width: 460px){}
+
+/* 포트폴리오 */
+section[id^=portfolio] .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+	border-bottom: 1px dashed #ccc;
+	overflow: hidden;
+}
+section[id^=portfolio] .content .text {
+	float: left;
+	width: 460px;
+	margin-left: 50px;
+	padding-top: 40px;
+	/* transform: translateX(-300px); */
+	/* opacity: 0; */
+	/* transition: transform 0.8s, opacity 0.8s; */
+}
+/* section[id^=portfolio] .content .pc.show .text {
+	transform: translateX(0);
+	opacity: 1;
+} */
+section[id^=portfolio] .content .text .title {
+	font-size: 2em;
+	font-weight: 600;
+	color: #000;
+}
+section[id^=portfolio] .content .text .sub {
+	padding: 15px 0;
+}
+section[id^=portfolio] .content .text .sub span {
+	padding-right: 10px;
+	color: #b6b6b6;
+}
+section[id^=portfolio] .content .text a {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	margin-top: 20px;
+	margin-right: 10px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 0.875em;
+	color: #9C4235;
+	border: 1px solid #9C4235;
+	transition: background-color 0.3s;
+}
+section[id^=portfolio] .content .text a:hover { /* 2019-12-03 */
+	color: #fff;
+	background-color: #9C4235;
+}
+section[id^=portfolio] .content .text a:active,
+section[id^=portfolio] .content .text a:focus { /* 2019-12-03 */
+	color: #9C4235;
+	background-color: transparent;
+}
+
+section[id^=portfolio] .content .img {
+	float: right;
+	margin-right: 50px;
+	width: 460px;
+	/* transform: translateX(300px); */
+	/* opacity: 0; */
+	/* transition: transform 0.8s, opacity 0.8s; */
+}
+section[id^=portfolio] .content img {
+	width: 100%;
+}
+section[id^=portfolio] .inner {
+	background-color: #eee;
+	display: none;
+}
+section[id^=portfolio] .inner .video {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+	border: 1px solid red;
+}
+section[id^=portfolio] .inner .text {
+	background-color: #fff;
+	padding: 50px 0;
+	text-align: center;
+}
+section[id^=portfolio] .inner .text .text1 {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+section[id^=portfolio] .inner .text .text1 span {
+	display: inline-block;
+	width: 120px;
+	color: #b6b6b6;
+}
+section[id^=portfolio] .inner .text .text2 {
+	padding-left: 50px;
+	margin-left: 50px;
+	border-left: 1px solid #eee;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+section[id^=portfolio] .inner .img {
+	width: 500px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+section[id^=portfolio] .inner .img img {
+	width: 100%;
+}
+section[id^=portfolio] .inner .guide {
+	padding: 50px 0;
+	background-color: #fff;
+	text-align: center;
+}
+section[id^=portfolio] .inner .guide .color {
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 50px;
+	margin-right: 50px;
+	border-right: 1px solid #eee;
+}
+section[id^=portfolio] .inner .guide .color .color1 {
+	margin-bottom: 30px;
+}
+section[id^=portfolio] .inner .guide .color li {
+	display: inline-block;
+	margin-left: 20px;
+	font-size: 0.875em;
+	text-align: center;
+}
+section[id^=portfolio] .inner .guide .color li:first-child {
+	/* margin-left: 0; */
+}
+section[id^=portfolio] .inner .guide .color .color_inner {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #000;
+}
+section[id^=portfolio] .inner .guide .font {
+	display: inline-block;
+	vertical-align: middle;
+}
+section[id^=portfolio] .inner .inner_tab a {
+	display: block;
+	width: 100%;
+	height: 50px;
+	background: url(../images/arrow.png) no-repeat center center;
+}
+@media only screen and (max-width: 1080px){}
+@media only screen and (max-width: 720px){}
+@media only screen and (max-width: 460px){}
+/* 포트폴리오1 */
+#portfolio1{
+	border-top: 1px solid #ccc;
+}
+#portfolio1 .content {
+	padding-top: 50px;
+}
+#portfolio1 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #c9bf19;
+}
+#portfolio1 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #9db615;
+}
+#portfolio1 .inner .color .color1 li:nth-child(3) .color_inner {
+	background-color: #74a727;
+}
+#portfolio1 .inner .color .color1 li:nth-child(4) .color_inner {
+	background-color: #fc7941;
+}
+#portfolio1 .inner .color .color1 li:nth-child(5) .color_inner {
+	background-color: #234c8f;
+}
+#portfolio1 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio1 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #828783;
+}
+#portfolio1 .inner .color .color2 li:nth-child(3) .color_inner {
+	background-color: #f5f4f0;
+}
+#portfolio1 .inner .color .color2 li:nth-child(4) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio1 .inner .font .font_1 {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+#portfolio1 .inner .font .font_2 {
+	font-size: 0.875em;
+}
+#portfolio1 .inner .font .font_3 {
+	font-size: 0.8em;
+}
+#portfolio1 .inner .font .font_4 {
+	font-size: 0.75em;
+}
+/* 포트폴리오2 */
+#portfolio2 .content .text {
+	float: right;
+	margin-left: 0;
+   margin-right: 50px;
+}
+#portfolio2 .content .img {
+	float: left;
+ 	margin-left: 50px;
+	margin-right: 0;
+}
+#portfolio2 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #22cace;
+}
+#portfolio2 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #fed136;
+}
+#portfolio2 .inner .color .color1 li:nth-child(3) .color_inner {
+	background-color: #74a727;
+}
+#portfolio2 .inner .color .color1 li:nth-child(4) .color_inner {
+	background-color: #fc7941;
+}
+#portfolio2 .inner .color .color1 li:nth-child(5) .color_inner {
+	background-color: #234c8f;
+}
+#portfolio2 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio2 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #353336;
+}
+#portfolio2 .inner .color .color2 li:nth-child(3) .color_inner {
+	background-color: #f9f9f9;
+}
+#portfolio2 .inner .color .color2 li:nth-child(4) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio2 .inner .font .font_1 {
+	font-size: 1.875em;
+	font-weight: 600;
+}
+#portfolio2 .inner .font .font_2 {
+	font-size: 1em;
+}
+#portfolio2 .inner .font .font_3 {
+	font-size: 0.75em;
+}
+/* 포트폴리오3 */
+#portfolio3 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #b5252e;
+}
+#portfolio3 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #444;
+}
+#portfolio3 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio3 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #707475;
+}
+#portfolio3 .inner .color .color2 li:nth-child(3) .color_inner {
+	background-color: #9f9f9d;
+}
+#portfolio3 .inner .color .color2 li:nth-child(4) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio3 .inner .font .font_1 {
+	font-size: 1.5em;
+	font-weight: 600;
+}
+#portfolio3 .inner .font .font_2 {
+	font-size: 0.9em;
+}
+#portfolio3 .inner .font .font_3 {
+	font-size: 0.8em;
+}
+/* 포트폴리오4 */
+#portfolio4{
+	border-bottom: 1px solid #ccc;
+}
+#portfolio4 .content {
+	border-bottom: none;
+}
+#portfolio4 .content .text {
+	float: right;
+	margin-left: 0;
+   margin-right: 50px;
+}
+#portfolio4 .content .img {
+	float: left;
+ 	margin-left: 50px;
+	margin-right: 0;
+}
+#portfolio4 .inner .color .color1 li:nth-child(1) .color_inner {
+	background-color: #e60013;
+}
+#portfolio4 .inner .color .color1 li:nth-child(2) .color_inner {
+	background-color: #674a3e;
+}
+#portfolio4 .inner .color .color1 li:nth-child(3) .color_inner {
+	background-color: #b89d83;
+}
+#portfolio4 .inner .color .color1 li:nth-child(4) .color_inner {
+	background-color: #efebe1;
+}
+#portfolio4 .inner .color .color2 li:nth-child(1) .color_inner {
+	background-color: #000;
+}
+#portfolio4 .inner .color .color2 li:nth-child(2) .color_inner {
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+#portfolio4 .inner .font .font_1 {
+	font-size: 1.875em;
+	font-weight: 600;
+}
+#portfolio4 .inner .font .font_2 {
+	font-size: 1.5em;
+}
+#portfolio4 .inner .font .font_3 {
+	font-size: 1em;
+}
+#portfolio4 .inner .font .font_4 {
+	font-size: 0.875em;
+}
+/* 푸터 */
+#footer {
+	padding: 10px 0;
+	/* background-color: #abd8e0; */
+	background-color: #444;
+	margin-top: 100px;
+}
+#footer .text {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	color: #fff;
+	font-size: 0.875em;
+}
+@media only screen and (max-width: 1080px){}
+@media only screen and (max-width: 720px){
+	#footer .text {
+		font-size: 0.7em;
+	}
+}
+@media only screen and (max-width: 460px){}
+
+.dim {
+	display: none;
+	position: fixed; right: 0; left: 0; top: 0; bottom: 0;
+	z-index: 999;
+	background-color: rgba(0,0,0,0.8);
+}
