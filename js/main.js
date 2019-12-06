@@ -217,17 +217,17 @@ $(function(){
 			$("#portfolio div[class^=portfolio]").each(function(i){
 				if(i != portNum){
 					$(this).find(".inner").slideUp(800);
+					video[portNum].play();
 				}
 				else{
 					$(this).find(".inner").slideDown(800,function(){
 						$("html").animate({scrollTop:portTab.parents(".content").offset().top},300);
 					});
+					for(var i=0; i<video.length; i++){
+						video[i].pause();
+						video[i].currentTime=0;
+					}
 				}
-				for(var i=0; i<video.length; i++){
-					video[i].pause();
-					video[i].currentTime=0;
-				}
-				video[portNum].play();
 			});
 			$(".port_tab").text("자세히보기");
 			$(this).text("닫기");
