@@ -94,10 +94,11 @@ body.static {
 /* gnb_mobile */
 #gnb_mobile {
 	display: none;
-	position: fixed; left: 0; right: 0; top: 150px;
+	position: fixed; left: 0; right: 0; top: 50%;
 	width: 70%;
-	height: 420px;
+	height: 504px;
 	margin: 0 auto;
+	margin-top: -252px;
 	z-index: 9999;
 }
 #gnb_mobile .gnb_inner li a {
