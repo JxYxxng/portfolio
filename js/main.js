@@ -225,6 +225,7 @@ $(function(){
 				}
 				for(var i=0; i<video.length; i++){
 					video[i].pause();
+					video[i].currentTime=0;
 				}
 				video[portNum].play();
 			});
