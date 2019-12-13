@@ -1,9 +1,9 @@
 $(function(){
-	var a; // 화면 show 변수
-	var b; // 메뉴 active 이벤트
-	var t=0; // window top
-	var firstFlag=false; // 스크롤 이벤트 초기 변수
-	var gnb_down=false; // 리사이즈 이벤트 초기 변수
+	var a;
+	var b;
+	var t=0;
+	var firstFlag=false;
+	var gnb_down=false;
 
 	setTimeout(function(){
 		$("html").animate({scrollTop : 0}, 300, function(){
